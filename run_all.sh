@@ -10,3 +10,4 @@ python3 src/chip_figures.py
 python3 src/chip_play_frames.py
 python3 src/chip_route_trees.py
 python3 src/chip_teams.py
+python3 src/chip_play_gif.py

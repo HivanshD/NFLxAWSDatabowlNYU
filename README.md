@@ -9,6 +9,8 @@ Chips work: when a tight end or back chips an edge rusher, that same rusher gets
 ---
 
 ## 1. Chips work (the part everyone knows)
+<p align="center"><img src="outputs/figs/0_chip_play.gif" width="560" alt="Animated: Kelce chips the edge rusher and stays at the line while Hill goes deep"></p>
+
 <p align="center"><img src="outputs/figs/0_chip_play_field.png" width="900" alt="Kelce chips the edge rusher; the rusher never gets home and Mahomes hits Hill deep"></p>
 <p align="center"><i>Snap, chip, throw. Kelce bumps the edge rusher at 0.7 s, so Toohill never reaches Mahomes, and Mahomes hits Hill deep for 19. But at the throw Kelce is only 0.4 yds past the line.</i></p>
 
@@ -82,6 +84,7 @@ Since the chip roughly breaks even in EPA overall, we split it by situation. Eve
 | "Pressure just moves to the other rushers"? | +4.3 pts raw, only +1.3 (se 0.7) after accounting for longer chip plays. **Not claimed** |
 | "Chip plays are just max-protect shot plays"? | 82% of chip plays still send 5 receivers out. Matched on exact protection structure, the gains remain |
 | "Only chip elite rushers"? | Teams already do (6.5% vs 2.1% chip rate), and the evidence is thin. **Not claimed** |
+| Are PFF's chip labels real in the tracking data? | 98.6% of the 1,361 labeled chips show the chipper within 1.5 yds of his rusher (median contact 0.7 s, starting 1.1 s after the snap) |
 | Is the Chip Tax a stable player trait? | A player's tax in odd-numbered games predicts his even-numbered games: **r = 0.81** (17 players with enough chips in both halves; 0.65 for TEs alone) |
 | Does the player ranking just reflect *where* he chips? | Adjusting each route for alignment, down, distance, play action, dropback and coverage barely moves it (rank correlation 0.86 for TEs, 0.92 for RBs) |
 | Is the cost just play design? | The cost holds within the same player, controlling for down, distance, play action, dropback, coverage, alignment and hold time |
