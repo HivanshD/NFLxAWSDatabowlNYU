@@ -9,7 +9,7 @@
 |---|---|
 | 🏈 **Everyone knows** | A chip works: the edge rusher who gets chipped pressures the QB **half as often (13% → 6%)**. |
 | ❓ **Nobody measured** | What it costs the TE or RB who throws it, so we built the **Chip Tax**: the route depth he gives up compared with his own non-chip routes, from NGS tracking. |
-| 💸 **The price** | A chip makes him **0.8 s late**, **3.1 yds shallower** at 2 s, and cuts his target rate from **18% to 13%**. A TE pays about **4.7 yds**, a back about **1.7**. |
+| 💸 **The price** | A chip makes him **0.8 s late**, **3.1 yds shallower** at 2 s, and cuts his target rate from **18% to 13%**, with a TE paying about **4.7 yds** and a back about **1.7**. |
 | 🏆 **Who pays least** | **Higbee, Kelce and Cook (≈4 yds)** chip far more cheaply than **Knox and Henry (≈5.5)**; among backs, **Mike Davis pays under 1**. |
 | 🎯 **Why it matters** | Because chip plays only about break even in expected points (+0.06 EPA per play, not significant), ***who* chips is the real decision**, though these are observational estimates from 8 weeks of data (1,361 chips), so only clearly flagged player differences are reliable. |
 
