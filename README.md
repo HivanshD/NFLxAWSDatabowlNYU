@@ -14,10 +14,10 @@
 ## The README in 5 sentences
 | | In one sentence |
 |---|---|
-| 🏈 **Everyone knows** | A chip works: the edge rusher who gets chipped pressures the QB **half as often (13% → 6%)**. |
-| ❓ **Nobody measured** | What it costs the TE or RB who throws it, so we built the **Chip Tax**: the route depth he gives up compared with his own non-chip routes, from NGS tracking. |
+| 🏈 **Known vs. unmeasured** | A chip works (the edge rusher who gets chipped pressures the QB **half as often, 13% → 6%**), but nobody had measured what it costs the TE or RB who throws it, so we built the **Chip Tax**: the route depth he gives up compared with his own non-chip routes, from NGS tracking. |
 | 💸 **The price** | A chip makes him **0.8 s late**, **3.1 yds shallower** at 2 s, and cuts his target rate from **18% to 13%**, with a TE paying about **4.7 yds** and a back about **1.7**. |
 | 🏆 **Who pays least** | **Higbee, Kelce and Cook (≈4 yds)** chip far more cheaply than **Knox and Henry (≈5.5)**; among backs, **Mike Davis pays under 1**. |
+| 🧭 **What coaches and scouts gain** | Today a chip is judged on film by feel and a chipper's catch rate makes him look efficient, but the Chip Tax gives an OC a **per-player price for the chip call and a teachable cue (hit the rusher in the first 0.7 s and get off)**, and gives a scout the **hidden route cost to add to a TE's receiving grade**, something no current stat (catch rate, PFF grade, NGS separation) captures. |
 | 🎯 **Why it matters** | Chip plays only about break even in expected points (+0.06 EPA per play, not significant), so *who* chips and *how* is the real decision, though these are observational estimates from 8 weeks of data (1,361 chips). |
 
 
