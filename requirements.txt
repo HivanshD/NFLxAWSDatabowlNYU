@@ -1,7 +1,6 @@
 pandas>=2.0
 numpy
 pyarrow
-scikit-learn
 statsmodels
 matplotlib
-plotly
+pillow
