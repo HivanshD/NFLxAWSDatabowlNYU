@@ -4,6 +4,8 @@
 ## In 30 seconds
 Chips work: when a tight end or back chips an edge rusher, that same rusher gets pressure **half as often (13% → 6%)**, and chip plays show **fewer sacks and more deep shots (+1.3 yds/play)** than plays with the same protection and hold time. But nobody had measured what the chip costs the player who throws it, so we built the **Chip Tax**: the route depth he gives up when he chips, compared with his own non-chip routes, from NGS tracking (1,361 chips, 2021 Weeks 1–8). The tax is real: a chip gets him into his route **0.8 s late**, **3.1 yds shallower at 2 seconds** (about 4.7 for a TE, 1.7 for a RB), and cuts his target rate from **18% to 13%**. It is not the same for everyone: **Higbee, Cook and Kelce pay about 4 yards while Knox and Henry pay about 5.5**, and backs are the cheapest chippers (**Mike Davis under 1**), so an offensive coordinator who needs a chip should spend it on the route he can best spare. These are observational estimates from 8 weeks of PFF-labeled data, so the play-level gains are associations and only clearly flagged player differences are reliable.
 
+**Format:** Metric (the Chip Tax), with a player comparison chart. **Skill-position focus:** every chipper here is a *route runner* in PFF's data (`pff_role = "Pass Route"`), not a blocker. The Chip Tax measures his route, his release and his targets; the pass-rush numbers are only the context for what the chip buys.
+
 ---
 
 ## 1. Chips work (the part everyone knows)
@@ -56,7 +58,6 @@ The chipper is still "open" when he does get the ball, but only because he's sha
 - **Scout:** a TE who chips on 30% of his routes gives up about 1.4 yds of route depth per route on average (0.3 × 4.7). His raw receiving numbers understate him, so grade him with that in mind.
 - **Broadcaster:** "He chipped, so he's wide open in the flat, and that's exactly why the defense lets him be."
 
-**Format:** Metric (the Chip Tax), with a player comparison chart. **Skill-position focus:** every chipper here is a *route runner* in PFF's data (`pff_role = "Pass Route"`), not a blocker. The Chip Tax measures his route, his release and his targets; the pass-rush numbers are only the context for what the chip buys.
 
 ---
 
