@@ -54,6 +54,10 @@ The chipper is still "open" when he does get the ball, but only because he's sha
 <p align="center"><img src="outputs/figs/3_chip_tax_by_player.png" width="750"></p>
 </details>
 
+## 4. The team view
+Which offenses chip the most, and who pays? A TE chip costs about 2.7× an RB chip, so *who* a team chips with matters as much as how often. **Las Vegas chips the most, but mostly with backs (−2.9 yds per chip). Denver chips almost as often but 78% with tight ends (−4.3 per chip), so it gives up about 39 yards of route depth per game, the most in the league.** Atlanta, Baltimore and Houston chip mostly with backs and pay the least per chip; Washington, Denver and Chicago pay the most.
+<p align="center"><img src="outputs/figs/7_team_chipping.png" width="800"></p>
+
 ## So what
 - **Offensive coordinator:** a chip buys real protection, so spend it on the cheapest route. Chipping with a back costs about 2 yds of route, with a tight end about 5. If it has to be the TE, a Higbee or Kelce chip costs about 1.5 yds less than a Knox or Henry chip. Kansas City could chip with Kelce more often; Denver's Fant habit is expensive.
 - **Scout:** a TE who chips on 30% of his routes gives up about 1.4 yds of route depth per route on average (0.3 × 4.7). His raw receiving numbers understate him, so grade him with that in mind.
