@@ -5,13 +5,13 @@
 <p align="center"><i>Kelce chips the edge rusher, and the rusher never gets home. But when Mahomes throws, Kelce is 0.4 yds past the line while Hill is 14 yds deep. <b>That gap is the Chip Tax.</b></i></p>
 
 ## The README in 5 sentences
-| | |
+| | In one sentence |
 |---|---|
 | 🏈 **Everyone knows** | A chip works: the edge rusher who gets chipped pressures the QB **half as often (13% → 6%)**. |
 | ❓ **Nobody measured** | What it costs the TE or RB who throws it, so we built the **Chip Tax**: the route depth he gives up compared with his own non-chip routes, from NGS tracking. |
 | 💸 **The price** | A chip makes him **0.8 s late**, **3.1 yds shallower** at 2 s, and cuts his target rate from **18% to 13%**, with a TE paying about **4.7 yds** and a back about **1.7**. |
 | 🏆 **Who pays least** | **Higbee, Kelce and Cook (≈4 yds)** chip far more cheaply than **Knox and Henry (≈5.5)**; among backs, **Mike Davis pays under 1**. |
-| 🎯 **Why it matters** | Because chip plays only about break even in expected points (+0.06 EPA per play, not significant), ***who* chips is the real decision**, though these are observational estimates from 8 weeks of data (1,361 chips), so only clearly flagged player differences are reliable. |
+| 🎯 **Why it matters** | Chip plays only about break even in expected points (+0.06 EPA per play, not significant), so *who* chips and *how* is the real decision, though these are observational estimates from 8 weeks of data (1,361 chips). |
 
 ---
 
@@ -23,13 +23,6 @@
 **Skill-position focus:** every chipper here is a *route runner* in PFF's data (`pff_role = "Pass Route"`), not a blocker; the Chip Tax measures his route, release and targets.
 **Reproducible:** one command (`./run_all.sh`, ~2 min) rebuilds every number and figure from the raw data; every estimate is in `outputs/chip_results.json` with its uncertainty.
 
-| 🔵 What a chip buys the offense | 🟠 What the chipper pays |
-|---|---|
-| Chipped rusher's pressure rate **13% → 6%** (same rusher) | **+0.8 s** later into his route |
-| Sacks **6.1% → 4.2%** (same protection + hold time) | **−3.1 yds** of route depth at 2.0 s |
-| Targets 15+ yds downfield **7% → 12%** | Target rate **18% → 13%** |
-| **+1.3 yds** per play | Caught passes are **2.1 air yds** deep vs 5.5, worth **−0.22 EPA** per target |
-| **Net: +0.06 EPA per play (≈ break-even)** | TE ≈ **−4.7 yds** per chip, RB ≈ **−1.7** |
 
 ---
 
@@ -61,9 +54,9 @@ The chipper is still "open" when he does get the ball, but only because he's sha
 | | Cheapest chippers (yds lost at 2 s) | Costliest chippers |
 |---|---|---|
 | **Tight ends** (avg −4.7) | Tyler Higbee −3.9 · Jared Cook −4.0 · Travis Kelce −4.0 · Ian Thomas −4.0 | Dawson Knox −5.6 · Hunter Henry −5.5 · Ricky Seals-Jones −5.4 · Noah Fant −5.2 |
-| **Running backs** (avg −1.7) | **Mike Davis −0.7** | Nyheim Hines −2.9 · David Johnson −2.9 · Kenyan Drake −2.4 |
+| **Running backs** (avg −1.7)<br><sub>backs start ~5 yds behind the line, so part of their low tax is a floor effect</sub> | **Mike Davis −0.7** | Nyheim Hines −2.9 · David Johnson −2.9 · Kenyan Drake −2.4 |
 
-**Who should be chipping?** Put the price next to how often each player is actually asked to chip, and the mismatches jump out. Kelce is one of the cheapest chippers but is asked least. Higbee chips a lot and pays little. Fant chips more than any other TE and pays one of the highest prices.
+**Who should be chipping?** Put the price next to how often each player is actually asked to chip, and the mismatches jump out. Kelce is cheap to chip but rarely asked, which is defensible: his route yards are worth more than most tight ends'. Higbee chips a lot and pays little. Fant chips more than any other TE and pays one of the highest prices.
 <p align="center"><img src="outputs/figs/6_who_should_chip.png" width="900"></p>
 
 <details>
