@@ -4,16 +4,19 @@
 <p align="center"><img src="outputs/figs/0_chip_play.gif" width="520" alt="Animated: Kelce chips the edge rusher and stays at the line while Hill goes deep"></p>
 <p align="center"><i>Kelce chips the edge rusher, and the rusher never gets home. But when Mahomes throws, Kelce is 0.4 yds past the line while Hill is 14 yds deep. <b>That gap is the Chip Tax.</b></i></p>
 
-## In 30 seconds
+## The README in 5 sentences
 | | |
 |---|---|
 | 🏈 **Everyone knows** | A chip works: the edge rusher who gets chipped pressures the QB **half as often (13% → 6%)**. |
 | ❓ **Nobody measured** | What it costs the TE or RB who throws it, so we built the **Chip Tax**: the route depth he gives up compared with his own non-chip routes, from NGS tracking. |
 | 💸 **The price** | A chip makes him **0.8 s late**, **3.1 yds shallower** at 2 s, and cuts his target rate from **18% to 13%**. A TE pays about **4.7 yds**, a back about **1.7**. |
 | 🏆 **Who pays least** | **Higbee, Kelce and Cook (≈4 yds)** chip far more cheaply than **Knox and Henry (≈5.5)**; among backs, **Mike Davis pays under 1**. |
-| 🎯 **Why it matters** | Chip plays only about break even in expected points (+0.06 EPA per play, not significant), so ***who* chips is the real decision**, and the Chip Tax answers it. |
+| 🎯 **Why it matters** | Because chip plays only about break even in expected points (+0.06 EPA per play, not significant), ***who* chips is the real decision**, though these are observational estimates from 8 weeks of data (1,361 chips), so only clearly flagged player differences are reliable. |
 
-<sub>Observational estimates from 2021 Weeks 1–8 (1,361 chips): play-level gains are associations, and only clearly flagged player differences are reliable.</sub>
+---
+
+## Supporting detail
+<sub>The five sentences above are the required summary (findings, method, who uses it, limitations). Everything below is the evidence behind them.</sub>
 
 **The coaching rule:** need a chip? Use a back first (~1.7 yds of route). If it has to be a tight end, use a cheap one (Higbee, Kelce, Cook ≈ 4) rather than Knox, Henry or Fant (≈ 5.5).
 **What's new:** Next Gen Stats has shown that chips buy the QB ~0.6 s. Nobody had measured the other side of the trade, what the chipper pays, or ranked who pays least. That's the Chip Tax.
