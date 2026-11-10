@@ -1,54 +1,49 @@
 <h1 align="center">The Chip Tax</h1>
-<p align="center"><b>Every chip block is a trade: one receiver's route pays for one pass rusher.<br>We measured the price, for every tight end and running back in the NFL.</b></p>
-
-> **What's a chip?** Before running his pass route, a tight end or running back gives the edge rusher a quick shove to slow him down and help the offensive tackle, then releases into his route. It's half block, half route. The shove helps the quarterback, but the receiver starts his route late. **The Chip Tax measures what that shove costs him.**
-
-<p align="center">
-<img src="outputs/figs/0_chip_play_field.png" width="900" alt="Kelce chips the edge rusher, then is only 0.4 yds past the line at the throw while Hill goes deep">
-</p>
-<p align="center"><i>Kelce chips the edge rusher for 0.8 s. The rusher never gets home, but at the throw Kelce is still only 0.4 yds past the line while Hill and Robinson are 15 yds deep.</i></p>
-
----
+<p align="center"><b>Everyone knows chip blocks help the quarterback.<br>Nobody has measured what they cost the tight end or back who throws them, or who can chip without paying.</b></p>
 
 ## In 30 seconds
-We built the **Chip Tax**, a new tracking metric for how much route depth a tight end or running back gives up when he chips an edge rusher, compared with his own non-chip routes (1,361 chips, 2021 Weeks 1–8). A chip costs him **3.1 yards of depth at 2 seconds** (about 5 for a TE, 2 for a RB), gets him into his route **0.8 s later**, and drops his target rate from **18% to 13%**. In return, the rusher he chips gets pressure **half as often (13% → 6%)**, and chip plays show **fewer sacks (6.1% → 4.2%) and 1.7× the share of 15+ yard targets (+1.3 yds/play)** compared with plays with the same protection and hold time. Coordinators can use the per-player tax to decide *who* chips: Knox and Henry lose about 5.5 yards per chip, while Kelce, Higbee and Cook lose about 4, and Mike Davis loses under 1. These are observational estimates from 8 weeks of PFF-labeled data, so play-level gains are associations and only clearly flagged player differences are reliable.
-
-| 🟠 **The chipper pays** | 🔵 **The offense gets** |
-|---|---|
-| **+0.8 s** later into his route | **−6.8 pts** pressure from the chipped rusher (13% → 6%) |
-| **−3.1 yds** of route depth at 2.0 s | **−1.9 pts** sack rate (6.1% → 4.2%) |
-| **−5 pts** chance he's targeted (18% → 13%) | **+4.8 pts** share of targets 15+ yds downfield (7% → 12%) |
-| TE ≈ **−4.7 yds**, RB ≈ **−1.7 yds** | **+1.3 yds** per play |
-
-<sub>Every number is a controlled comparison (same player / same rusher / same protection structure and hold time) with a 95% CI that excludes zero. Details are below.</sub>
-
-**Format:** Metric (the Chip Tax), with a player comparison chart. **Built for:** offensive coordinators (who should chip, and when it pays), pro scouts (what chip snaps cost a TE's receiving value), and broadcasters (why the chipper is wide open in the flat).
+Chips work: when a tight end or back chips an edge rusher, that same rusher gets pressure **half as often (13% → 6%)**, and chip plays show **fewer sacks and more deep shots (+1.3 yds/play)** than plays with the same protection and hold time. But nobody had measured what the chip costs the player who throws it, so we built the **Chip Tax**: the route depth he gives up when he chips, compared with his own non-chip routes, from NGS tracking (1,361 chips, 2021 Weeks 1–8). The tax is real: a chip gets him into his route **0.8 s late**, **3.1 yds shallower at 2 seconds** (about 4.7 for a TE, 1.7 for a RB), and cuts his target rate from **18% to 13%**. It is not the same for everyone: **Higbee, Cook and Kelce pay about 4 yards while Knox and Henry pay about 5.5**, and backs are the cheapest chippers (**Mike Davis under 1**), so an offensive coordinator who needs a chip should spend it on the route he can best spare. These are observational estimates from 8 weeks of PFF-labeled data, so the play-level gains are associations and only clearly flagged player differences are reliable.
 
 ---
 
-## 1. The receipt
+## 1. Chips work (the part everyone knows)
+<p align="center"><img src="outputs/figs/0_chip_play_field.png" width="900" alt="Kelce chips the edge rusher; the rusher never gets home and Mahomes hits Hill deep"></p>
+<p align="center"><i>Kelce chips the edge rusher for 0.8 s. The rusher is still 5.8 yds from Mahomes at the throw, and Mahomes hits Hill deep for 19.</i></p>
+
+| What the offense gets from a chip | No chip | Chip |
+|---|---|---|
+| Chipped rusher pressures the QB (same rusher) | 13% | **6%** |
+| Play ends in a sack (same protection + hold time) | 6.1% | **4.2%** |
+| Target is 15+ yds downfield | 7% | **12%** |
+| Yards per play | 6.4 | **7.7** |
+
+Next Gen Stats has reported a similar effect (chipped rushers take ~0.6 s longer to reach the QB); our raw medians agree (3.4 s vs 2.8 s). **So the chip is worth something. The question is the price.**
+
+## 2. But what does it cost? The Chip Tax
+Look at Kelce in the picture above: at the throw he is **0.4 yds past the line** while both receivers are 15 yds deep. That's the tax. Comparing every chipper with **himself** on non-chip routes (same down, distance, coverage, alignment and hold time):
+
 <p align="center"><img src="outputs/figs/2_the_receipt.png" width="900"></p>
-
-A chip is not free and not just protection. It moves four things at once:
-
-<p align="center"><img src="outputs/figs/2b_what_a_chip_moves.png" width="900"></p>
-
-## 2. Where the time goes
-The chipper's route stalls while he's engaged. The rusher he hits stays about a yard farther from the QB for the rest of the rep.
 <p align="center"><img src="outputs/figs/1_two_sides_of_a_chip.png" width="900"></p>
 
-## 3. Why chippers "catch 80%"
-Next Gen Stats has reported that routes run out of a chip catch ~80% of targets. The tracking data shows why: when a chipper is targeted, he's typically **8 yards from the nearest defender but only 1 yard downfield**. He's open because he's shallow, a checkdown the defense is happy to give up.
-<p align="center"><img src="outputs/figs/4_open_but_harmless.png" width="800"></p>
+The chipper is still "open" when he does get the ball, but only because he's shallow: targeted chippers are typically **8 yds from the nearest defender and 1 yd downfield**. That's why chip routes catch ~80%: they're checkdowns.
+<p align="center"><img src="outputs/figs/4_open_but_harmless.png" width="750"></p>
 
-## 4. Who pays the most tax
-Players differ beyond noise (p < 0.001 for both TEs and RBs), and for TEs the difference isn't just route type. Estimates are shrunk toward the position average so small samples don't look extreme. **Bold** = clearly cheaper or costlier than his position.
+## 3. Who chips without paying?
+**Nobody chips for free, but some players pay much less.** Players differ beyond noise (p < 0.001 for both TEs and RBs), and for tight ends it isn't just route type. Estimates are shrunk toward the position average so small samples don't look extreme.
+
+| | Cheapest chippers (yds lost at 2 s) | Costliest chippers |
+|---|---|---|
+| **Tight ends** (avg −4.7) | Tyler Higbee −3.9 · Jared Cook −4.0 · Travis Kelce −4.0 · Ian Thomas −4.0 | Dawson Knox −5.6 · Hunter Henry −5.5 · Ricky Seals-Jones −5.4 · Noah Fant −5.2 |
+| **Running backs** (avg −1.7) | **Mike Davis −0.7** | Nyheim Hines −2.9 · David Johnson −2.9 · Kenyan Drake −2.4 |
+
 <p align="center"><img src="outputs/figs/3_chip_tax_by_player.png" width="750"></p>
 
 ## So what
-- **Offensive coordinator:** if you need to chip, chip with the player whose route you can spare. A Knox or Henry chip costs about 5.5 yards of route; a Kelce, Higbee or Cook chip about 4; a back like Mike Davis under 1. And the chip pairs with a shot: plays with a chip show more 15+ yard targets at the same protection and hold time.
-- **Scout:** a TE who chips on 30% of his routes gives up about 1.4 yards of route depth per route on average (0.3 × 4.7). His raw receiving numbers understate him, and that should go into his grade.
+- **Offensive coordinator:** a chip buys real protection, so spend it on the cheapest route. Chipping with a back costs about 2 yds of route, with a tight end about 5. If it has to be the TE, a Higbee or Kelce chip costs about 1.5 yds less than a Knox or Henry chip.
+- **Scout:** a TE who chips on 30% of his routes gives up about 1.4 yds of route depth per route on average (0.3 × 4.7). His raw receiving numbers understate him, so grade him with that in mind.
 - **Broadcaster:** "He chipped, so he's wide open in the flat, and that's exactly why the defense lets him be."
+
+**Format:** Metric (the Chip Tax), with a player comparison chart.
 
 ---
 
