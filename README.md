@@ -6,6 +6,16 @@ Chips work: when a tight end or back chips an edge rusher, that same rusher gets
 
 **Format:** Metric (the Chip Tax), with a player comparison chart. **Skill-position focus:** every chipper here is a *route runner* in PFF's data (`pff_role = "Pass Route"`), not a blocker. The Chip Tax measures his route, his release and his targets; the pass-rush numbers are only the context for what the chip buys.
 
+### Key findings
+- **Chips buy protection:** the same edge rusher pressures the QB 13% of the time unchipped vs 6% chipped, and chip plays show fewer sacks (6.1% → 4.2%) and more deep targets (7% → 12%).
+- **The chipper pays:** a chip gets him into his route 0.8 s late, 3.1 yds shallower at 2 seconds, and drops his target rate from 18% to 13%.
+- **Net is roughly break-even:** in expected points, chip plays show +0.06 EPA/play, not significant, so *who* chips is the decision that matters.
+- **Tight ends cost more:** a TE chip costs about 2.7× an RB chip in route depth (about 4.7 vs 1.7 yds).
+- **Cheapest vs costliest chippers:** Higbee, Kelce and Cook pay about 4 yds per chip, Knox and Henry about 5.5; among backs, Mike Davis pays under 1.
+- **Denver pays the most:** chipping mostly with tight ends, Denver gives up about 39 route yards per game, the most in the league.
+
+<sub>Every number is a controlled comparison: same player, same rusher, or same protection and hold time. Methods and checks are in the collapsible sections below.</sub>
+
 ---
 
 ## 1. Chips work (the part everyone knows)
