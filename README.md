@@ -8,7 +8,7 @@ Chips work: when a tight end or back chips an edge rusher, that same rusher gets
 
 ## 1. Chips work (the part everyone knows)
 <p align="center"><img src="outputs/figs/0_chip_play_field.png" width="900" alt="Kelce chips the edge rusher; the rusher never gets home and Mahomes hits Hill deep"></p>
-<p align="center"><i>Kelce chips the edge rusher for 0.8 s. The rusher is still 5.8 yds from Mahomes at the throw, and Mahomes hits Hill deep for 19.</i></p>
+<p align="center"><i>Snap, chip, throw. Kelce bumps the edge rusher at 0.7 s, so Toohill never reaches Mahomes, and Mahomes hits Hill deep for 19. But at the throw Kelce is only 0.4 yds past the line.</i></p>
 
 | What the offense gets from a chip | No chip | Chip |
 |---|---|---|
