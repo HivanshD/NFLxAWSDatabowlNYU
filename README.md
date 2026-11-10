@@ -60,6 +60,13 @@ The chipper is still "open" when he does get the ball, but only because he's sha
 - **Broadcaster:** "He chipped, so he's wide open in the flat, and that's exactly why the defense lets him be."
 
 
+<details>
+<summary><b>When does a chip pay off? (directional, not significant)</b></summary>
+
+Since the chip roughly breaks even in EPA overall, we split it by situation. Every split points the same way, but none clears statistical significance on 8 weeks of data, so **treat this as a hypothesis, not a finding**. Chips look better with a back than a TE (+0.11 vs +0.06 EPA), on early downs (+0.10 vs −0.03 on 3rd/4th), and against an elite rusher (+0.08 vs −0.03).
+<p align="center"><img src="outputs/figs/8_when_chip_pays.png" width="850"></p>
+</details>
+
 ---
 
 <details>
@@ -71,6 +78,7 @@ The chipper is still "open" when he does get the ball, but only because he's sha
 | "Pressure just moves to the other rushers"? | +4.3 pts raw, only +1.3 (se 0.7) after accounting for longer chip plays. **Not claimed** |
 | "Chip plays are just max-protect shot plays"? | 82% of chip plays still send 5 receivers out. Matched on exact protection structure, the gains remain |
 | "Only chip elite rushers"? | Teams already do (6.5% vs 2.1% chip rate), and the evidence is thin. **Not claimed** |
+| Is the Chip Tax a stable player trait? | A player's tax in odd-numbered games predicts his even-numbered games: **r = 0.81** (17 players with enough chips in both halves; 0.65 for TEs alone) |
 | Does the player ranking just reflect *where* he chips? | Adjusting each route for alignment, down, distance, play action, dropback and coverage barely moves it (rank correlation 0.86 for TEs, 0.92 for RBs) |
 | Is the cost just play design? | The cost holds within the same player, controlling for down, distance, play action, dropback, coverage, alignment and hold time |
 </details>

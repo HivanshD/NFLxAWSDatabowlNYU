@@ -5,6 +5,7 @@ python3 src/build_routes.py
 python3 src/chip_extract.py
 python3 src/chip_analysis.py
 python3 src/chip_epa.py
+python3 src/chip_when.py
 python3 src/chip_figures.py
 python3 src/chip_play_frames.py
 python3 src/chip_route_trees.py
