@@ -205,7 +205,51 @@ def main():
     fig_dumbbell(res)
     fig_tax_by_player()
     fig_open_but_harmless(RT)
+    fig_quadrant()
     print("figures ->", FIGS)
+
+
+
+def fig_quadrant():
+    """How often a player chips vs what each chip costs him (relative to his position)."""
+    t = pd.read_csv(OUT / "chip_tax_by_player.csv")
+    t = t[t.pos.isin(["TE", "RB"])].copy()
+    pff = pd.read_csv(ROOT / "data" / "pffScoutingData.csv", usecols=["nflId", "pff_role", "pff_blockType"])
+    d = pff[pff.pff_role.isin(["Pass Route", "Pass Block"])]
+    g = d.groupby("nflId").agg(snaps=("pff_role", "size"), ch=("pff_blockType", lambda s: (s == "CH").sum()))
+    t = t.merge((g.ch / g.snaps).rename("chip_rate"), left_on="nflId", right_index=True)
+    t["rel"] = t.chip_tax - t.pos_mean
+    fig, ax = plt.subplots(figsize=(12, 8))
+    xm = t.chip_rate.median() * 100
+    ax.axhline(0, color=INK2, lw=1)
+    ax.axvline(xm, color=INK2, lw=1, ls=":")
+    cols = {"TE": BLUE, "RB": ORANGE}
+    for row in t.itertuples():
+        strong = row.verdict != "about average"
+        c = cols[row.pos]
+        ax.scatter(row.chip_rate * 100, row.rel, s=140 if strong else 70, color=c if strong else SURFACE,
+                   edgecolor=c, lw=2, zorder=3)
+        off = {"Hunter Henry": (-92, -4), "Conklin": (6, -12), "Ian Thomas": (8, -10), "Kmet": (6, -12)}.get(
+            row.name if strong else row.name.split()[-1], (7, 4))
+        ax.annotate(row.name.split()[-1] if not strong else row.name, (row.chip_rate * 100, row.rel), xytext=off,
+                    textcoords="offset points", fontsize=9.5 if strong else 8.5,
+                    color=INK if strong else INK2, fontweight="bold" if strong else "normal")
+    kw = dict(fontsize=12, fontweight="bold", color=INK2, transform=ax.transAxes)
+    ax.text(0.98, 0.97, "WORKHORSE CHIPPERS\nchip a lot, pay little", ha="right", va="top", **kw)
+    ax.text(0.98, 0.03, "EXPENSIVE HABIT\nchip a lot, pay a lot", ha="right", va="bottom", **kw)
+    ax.text(0.02, 0.97, "UNTAPPED\ncheap chippers, rarely used", ha="left", va="top", **kw)
+    ax.text(0.02, 0.03, "RIGHTLY SPARED\ncostly, rarely asked", ha="left", va="bottom", **kw)
+    lim = max(abs(t.rel).max(), 1.2) + 0.3
+    ax.set_ylim(-lim, lim)
+    ax.set_xlim(t.chip_rate.min() * 100 - 1, t.chip_rate.max() * 100 + 2.5)
+    ax.set_xlabel("how often he chips (% of his pass snaps)")
+    ax.set_ylabel("Chip Tax vs his position average (yds)\n↑ cheaper than typical   ↓ costlier")
+    ax.set_title("Who should be chipping? How often he chips vs what it costs him")
+    fig.text(0.01, 0.005, "TE = blue, RB = orange. Filled = clearly cheaper/costlier than his position (80% interval). Dotted line = median usage.", fontsize=9, color=INK2)
+    fig.tight_layout(rect=(0, 0.02, 1, 1))
+    fig.savefig(FIGS / "6_who_should_chip.png", dpi=160)
+    plt.close(fig)
+
 
 
 if __name__ == "__main__":
