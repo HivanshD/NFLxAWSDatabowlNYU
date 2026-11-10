@@ -56,7 +56,7 @@ The chipper is still "open" when he does get the ball, but only because he's sha
 - **Scout:** a TE who chips on 30% of his routes gives up about 1.4 yds of route depth per route on average (0.3 × 4.7). His raw receiving numbers understate him, so grade him with that in mind.
 - **Broadcaster:** "He chipped, so he's wide open in the flat, and that's exactly why the defense lets him be."
 
-**Format:** Metric (the Chip Tax), with a player comparison chart.
+**Format:** Metric (the Chip Tax), with a player comparison chart. **Skill-position focus:** every chipper here is a *route runner* in PFF's data (`pff_role = "Pass Route"`), not a blocker. The Chip Tax measures his route, his release and his targets; the pass-rush numbers are only the context for what the chip buys.
 
 ---
 
