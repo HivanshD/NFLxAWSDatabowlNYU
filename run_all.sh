@@ -11,3 +11,4 @@ python3 src/chip_play_frames.py
 python3 src/chip_route_trees.py
 python3 src/chip_teams.py
 python3 src/chip_play_gif.py
+python3 src/chip_tool.py

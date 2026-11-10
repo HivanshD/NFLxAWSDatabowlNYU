@@ -6,6 +6,8 @@ Chip blocks work: the chipped edge rusher pressures the quarterback **half as of
 
 **Format:** Metric (the Chip Tax), with a player comparison chart. **Skill-position focus:** every chipper here is a *route runner* in PFF's data (`pff_role = "Pass Route"`), not a blocker. The Chip Tax measures his route, his release and his targets; the pass-rush numbers are only the context for what the chip buys.
 
+> 🔎 **Try it: [Chip Tax Scout Tool](https://hivanshd.github.io/NFLxAWSDatabowlNYU/).** Pick any tight end or running back to see his route tree with and without a chip, his Chip Tax, and where he sits in the league. (The same page is in [`docs/index.html`](docs/index.html).)
+
 ### Key findings
 - **Chips buy protection:** the same edge rusher pressures the QB 13% of the time unchipped vs 6% chipped, and chip plays show fewer sacks (6.1% → 4.2%) and more deep targets (7% → 12%).
 - **The chipper pays:** a chip gets him into his route 0.8 s late, 3.1 yds shallower at 2 seconds, and drops his target rate from 18% to 13%.
