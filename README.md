@@ -1,6 +1,13 @@
 <h1 align="center">The Chip Tax</h1>
 <p align="center"><b>Everyone knows chip blocks help the quarterback.<br>Nobody has measured what they cost the tight end or back who throws them, or who can chip without paying.</b></p>
 
+<p align="center">
+<img src="https://img.shields.io/badge/data-NGS%20tracking%20%2B%20PFF%20%2B%20nflverse-2a78d6">
+<img src="https://img.shields.io/badge/chips%20analyzed-1%2C361-eb6834">
+<img src="https://img.shields.io/badge/reproducible-one%20command%2C%20~2%20min-1baf7a">
+<img src="https://img.shields.io/badge/python-pandas%20%7C%20statsmodels%20%7C%20matplotlib-555">
+</p>
+
 <p align="center"><img src="outputs/figs/0_chip_play.gif" width="520" alt="Animated: Kelce chips the edge rusher and stays at the line while Hill goes deep"></p>
 <p align="center"><i>Kelce chips the edge rusher, and the rusher never gets home. But at the throw Kelce is only 0.4 yds past the line. Hill and Robinson are there to show the play, not as the comparison: <b>the Chip Tax compares Kelce with Kelce</b>. On his normal routes he is 4.4 yds deep at 2 s; after a chip, 0.6.</i></p>
 
@@ -87,6 +94,20 @@ We measured each chip's mechanics in the tracking data: **when** the chipper fir
 ## 4. The team view
 Which offenses chip the most, and who pays? A TE chip costs about 2.7× an RB chip, so *who* a team chips with matters as much as how often. **Las Vegas chips the most, but mostly with backs (−2.9 yds per chip). Denver chips almost as often but 78% with tight ends (−4.3 per chip), so it gives up about 39 yards of route depth per game, the most in the league.** Atlanta, Baltimore and Houston chip mostly with backs and pay the least per chip; Washington, Denver and Chicago pay the most.
 <p align="center"><img src="outputs/figs/7_team_chipping.png" width="800"></p>
+
+## From hackathon to a weekly team tool
+**How a team would use it each week.** Monday: refresh the Chip Tax with the latest game. Tuesday game plan: when the opponent has an edge rusher worth chipping, the OC picks the chipper and the technique cue ("hit in the first 0.7 s, get off") from the player card; the defensive staff use the opponent's chip tendencies (team view) to anticipate who stays in and how shallow his release will be. Scouts add the Chip Tax to a TE's receiving grade, since a high-chip role hides route value.
+
+**How it would run on AWS.** NGS tracking already lives in AWS. A production version is a small, cheap pipeline:
+
+| Step | AWS service | What it does |
+|---|---|---|
+| Ingest | **Amazon S3** | Weekly NGS tracking + PFF charting land in S3 (partitioned by season/week/game) |
+| Feature build | **AWS Glue** or **AWS Lambda** per game | `chip_extract.py` logic: normalize, find chips, compute route depth, contact timing and rusher distance (already parallel by game) |
+| Model | **Amazon SageMaker Processing** | Fixed-effect regressions and empirical-Bayes shrinkage (`chip_analysis.py`), refit weekly |
+| Serve | **Amazon Athena** + **QuickSight**, or S3 static hosting | Chip Tax tables for analysts; the scout tool (`docs/index.html`) as a static page |
+
+The whole 8-week dataset (8,557 plays, 122 games) runs in about 2 minutes on a laptop; per-game parallelism means a full season or multiple seasons scale linearly.
 
 ## So what
 - **Offensive coordinator:** you don't need a different tight end to chip cheaper; you need an earlier chip. Coach the chip to land in the first 0.7 s and be released, and line the chipper up tight. Where you do have a choice, a back's chip costs about 2 yds of route vs about 5 for a TE.
