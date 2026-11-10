@@ -2,7 +2,7 @@
 <p align="center"><b>Everyone knows chip blocks help the quarterback.<br>Nobody has measured what they cost the tight end or back who throws them, or who can chip without paying.</b></p>
 
 <p align="center"><img src="outputs/figs/0_chip_play.gif" width="520" alt="Animated: Kelce chips the edge rusher and stays at the line while Hill goes deep"></p>
-<p align="center"><i>Kelce chips the edge rusher, and the rusher never gets home. But when Mahomes throws, Kelce is 0.4 yds past the line while Hill is 14 yds deep. <b>That gap is the Chip Tax.</b></i></p>
+<p align="center"><i>Kelce chips the edge rusher, and the rusher never gets home. But at the throw Kelce is only 0.4 yds past the line. Hill and Robinson are there to show the play, not as the comparison: <b>the Chip Tax compares Kelce with Kelce</b>. On his normal routes he is 4.4 yds deep at 2 s; after a chip, 0.6.</i></p>
 
 ## The README in 5 sentences
 | | In one sentence |
@@ -12,6 +12,11 @@
 | 💸 **The price** | A chip makes him **0.8 s late**, **3.1 yds shallower** at 2 s, and cuts his target rate from **18% to 13%**, with a TE paying about **4.7 yds** and a back about **1.7**. |
 | 🏆 **Who pays least** | **Higbee, Kelce and Cook (≈4 yds)** chip far more cheaply than **Knox and Henry (≈5.5)**; among backs, **Mike Davis pays under 1**. |
 | 🎯 **Why it matters** | Chip plays only about break even in expected points (+0.06 EPA per play, not significant), so *who* chips and *how* is the real decision, though these are observational estimates from 8 weeks of data (1,361 chips). |
+
+
+> **How to read the Chip Tax:** every player is compared **with himself**, never with other players. Knox's Chip Tax = Knox's route depth on his chip routes minus Knox's depth on *his own* non-chip routes, in similar situations (same down, distance, coverage, alignment, play type). His speed, size and role cancel out. Players only meet when we rank those self-comparisons, and that ranking is stable across games (r = 0.81) and barely moves after adjusting for context (rank correlation 0.86–0.92).
+>
+> **What it is, and isn't:** it prices the *chip call*: the bump plus the route that comes with it, which is often a designed checkdown. It is measured in yards, not value, so a yard of Kelce's route is worth more than a yard of a backup's. It's a price tag for a play call, not a replacement for film.
 
 ---
 
