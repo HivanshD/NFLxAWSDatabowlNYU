@@ -109,6 +109,7 @@ select{font-size:15px;padding:6px 8px;max-width:100%;border:1px solid #ccc;borde
 footer{margin-top:24px;color:#52514e;font-size:13px}footer a{color:#2a78d6}
 </style></head><body><div class="wrap">
 <h1>The Chip Tax: Scout Tool</h1>
+<div style="background:#fff4ec;border-left:4px solid #eb6834;padding:12px 16px;margin:10px 0 14px;border-radius:6px;font-size:15px;line-height:1.5"><b>The Chip Tax in one line:</b> a chip halves the chipped rusher&#39;s pressure (13% &rarr; 6%), but costs the chipper 3.1 yds of route depth at 2 s and a third of his targets (TE &asymp; 4.7 yds, RB &asymp; 1.7). Each player is compared <b>with himself</b>. Cheap chippers don&#39;t chip less; they <b>hit the rusher sooner (first 0.7 s) and get off</b>. <a href="https://github.com/HivanshD/NFLxAWSDatabowlNYU#readme">Full analysis, methods and checks &rarr;</a></div>
 <p class="intro">Pick a tight end or running back to see what a chip block costs his route (2021 NFL Weeks 1-8, NGS tracking + PFF).</p>
 <select id="pick"></select>
 <div class="card" id="card"></div>
