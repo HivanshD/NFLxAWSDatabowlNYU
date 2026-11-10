@@ -1,6 +1,8 @@
 <h1 align="center">The Chip Tax</h1>
 <p align="center"><b>Every chip block is a trade: one receiver's route pays for one pass rusher.<br>We measured the price, for every tight end and running back in the NFL.</b></p>
 
+> **What's a chip?** Before running his pass route, a tight end or running back gives the edge rusher a quick shove to slow him down and help the offensive tackle, then releases into his route. It's half block, half route. The shove helps the quarterback, but the receiver starts his route late. **The Chip Tax measures what that shove costs him.**
+
 <p align="center">
 <img src="outputs/figs/0_chip_play_field.png" width="900" alt="Kelce chips the edge rusher, then is only 0.4 yds past the line at the throw while Hill goes deep">
 </p>
