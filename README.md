@@ -38,7 +38,7 @@
 Next Gen Stats has reported a similar effect (chipped rushers take ~0.6 s longer to reach the QB); our raw medians agree (3.4 s vs 2.8 s). **So the chip buys real protection and deeper throws, but in EPA it only about breaks even. That makes the price, and who pays it, the real question.**
 
 ## 2. But what does it cost? The Chip Tax
-Look at Kelce in the picture above: at the throw he is **0.4 yds past the line** while the receivers are 14–15 yds deep. That's the tax. Comparing every chipper with **himself** on non-chip routes (same down, distance, coverage, alignment and hold time):
+Look at Kelce in the picture above: at the throw he is **0.4 yds past the line**. On his normal routes he's typically 4+ yds downfield by then. That gap between Kelce-chipping and Kelce-not-chipping is the tax. Comparing every chipper with **himself** on non-chip routes (same down, distance, coverage, alignment and hold time):
 
 <p align="center"><img src="outputs/figs/2_the_receipt.png" width="900"></p>
 
