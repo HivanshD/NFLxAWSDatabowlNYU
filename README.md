@@ -18,7 +18,7 @@
 ## Supporting detail
 <sub>The five sentences above are the required summary (findings, method, who uses it, limitations). Everything below is the evidence behind them.</sub>
 
-**The coaching rule:** need a chip? Use a back first (~1.7 yds of route). If it has to be a tight end, use a cheap one (Higbee, Kelce, Cook ≈ 4) rather than Knox, Henry or Fant (≈ 5.5).
+**The coaching rule:** *chip early and get off.* Cheap chippers don't chip for less time than costly ones (0.74 s of contact either way); they **hit the rusher sooner (0.78 s vs 0.97 s after the snap) from a tighter alignment**. A TE who makes contact in the first 0.7 s is still past the line at 2 s; one who makes contact after 1.2 s is ~3 yds behind it. That's technique any roster can coach.
 **What's new:** Next Gen Stats has shown that chips buy the QB ~0.6 s. Nobody had measured the other side of the trade, what the chipper pays, or ranked who pays least. That's the Chip Tax.
 **Skill-position focus:** every chipper here is a *route runner* in PFF's data (`pff_role = "Pass Route"`), not a blocker; the Chip Tax measures his route, release and targets.
 **Reproducible:** one command (`./run_all.sh`, ~2 min) rebuilds every number and figure from the raw data; every estimate is in `outputs/chip_results.json` with its uncertainty.
@@ -71,6 +71,19 @@ The chipper is still "open" when he does get the ball, but only because he's sha
 <p align="center"><img src="outputs/figs/3_chip_tax_by_player.png" width="750"></p>
 </details>
 
+## What makes a cheap chipper? Timing, not toughness
+We measured each chip's mechanics in the tracking data: **when** the chipper first contacts the rusher, **how long** he stays on him, and **where** he lined up. Then we asked what predicts the route depth he has left at 2 seconds (regression on 1,265 chip routes, controlling for down and play action):
+
+| Chip mechanic (TEs) | Effect on route depth at 2.0 s |
+|---|---|
+| Each 1 s later before first contact | **−1.5 yds** (RBs −2.0) |
+| Each extra 1 s of contact | **−1.8 yds** (RBs −1.1) |
+| Each 1 yd tighter to the line at the snap | **+1.0 yd** |
+| Early contact (≤0.7 s) vs late (>1.2 s) | **+0.6 vs −2.9 yds**, a 3.5-yd swing |
+
+**The cheapest TEs (Higbee, Kelce, Cook, Ian Thomas) stay on the rusher just as long as the costliest (Knox, Henry, Fant): 0.74 s each. The difference is that they get there sooner (0.78 s vs 0.97 s) from a tighter split.** So the Chip Tax isn't fixed by who you have; it's mostly a technique and alignment choice. *Caveat: timing also depends on the rusher's path (a rusher who comes wide arrives later), so this is a strong pattern, not proof.*
+<p align="center"><img src="outputs/figs/9_what_makes_a_cheap_chip.png" width="900"></p>
+
 > 🔎 **Companion tool: [Chip Tax Scout Tool](https://raw.githack.com/HivanshD/NFLxAWSDatabowlNYU/main/docs/index.html).** The metric above is the submission; this page lets a scout look up any TE or RB, see his route tree with and without a chip, his Chip Tax, and where he sits in the league. (Source: [`docs/index.html`](docs/index.html).)
 
 ## 4. The team view
@@ -78,7 +91,7 @@ Which offenses chip the most, and who pays? A TE chip costs about 2.7× an RB ch
 <p align="center"><img src="outputs/figs/7_team_chipping.png" width="800"></p>
 
 ## So what
-- **Offensive coordinator:** a chip buys real protection, so spend it on the cheapest route. Chipping with a back costs about 2 yds of route, with a tight end about 5. If it has to be the TE, a Higbee or Kelce chip costs about 1.5 yds less than a Knox or Henry chip. If a tight end must chip, Kelce is one of the cheapest; Denver's Fant habit is one of the most expensive.
+- **Offensive coordinator:** you don't need a different tight end to chip cheaper; you need an earlier chip. Coach the chip to land in the first 0.7 s and be released, and line the chipper up tight. Where you do have a choice, a back's chip costs about 2 yds of route vs about 5 for a TE.
 - **Scout:** a TE who chips on 30% of his routes gives up about 1.4 yds of route depth per route on average (0.3 × 4.7). His raw receiving numbers understate him, so grade him with that in mind.
 - **Broadcaster:** "He chipped, so he's wide open in the flat, and that's exactly why the defense lets him be."
 
@@ -91,6 +104,19 @@ Since the chip roughly breaks even in EPA overall, we split it by situation. Eve
 </details>
 
 ---
+
+<details>
+<summary><b>Exactly which data fields we used</b></summary>
+
+| File | Fields | Used for |
+|---|---|---|
+| `tracking/tracking_<gameId>.csv` (NGS, 10 Hz) | `gameId, playId, nflId, frameId, team, playDirection, x, y, s, o, dir, event, jerseyNumber` | Direction normalization; snap (`ball_snap`/`autoevent_ballsnap`) to throw (`pass_forward`/`autoevent_passforward`/`qb_sack`/`qb_strip_sack`/`run`); route depth vs the line of scrimmage (football `x` at the snap); time to release; chip contact timing and length (chipper within 1.5 yds of his rusher); rusher distance to the QB; distance to the nearest coverage defender; play diagrams |
+| `pffScoutingData.csv` | `pff_role` (`Pass Route`, `Pass Block`, `Pass Rush`, `Coverage`, `Pass`), `pff_blockType` (`CH` = chip), `pff_nflIdBlockedPlayer`, `pff_positionLinedUp`, `pff_hurry, pff_hit, pff_sack` | Who chipped and whom; route runners vs blockers vs rushers; alignment; pressure; protection structure (# blockers × # route runners) |
+| `plays.csv` | `playDescription, possessionTeam, defensiveTeam, down, yardsToGo, passResult, playResult, pff_playAction, dropBackType, pff_passCoverage, pff_passCoverageType, offenseFormation, personnelO` | Targeted receiver (parsed from the description); outcomes (sack, completion, yards); controls |
+| `players.csv` | `nflId, officialPosition, displayName` | TE/RB/FB filter, names |
+| `games.csv` | `gameId` | Game list, game-clustered standard errors |
+| nflverse play-by-play 2021 (public) | `old_game_id, play_id, epa, yards_after_catch, air_yards, complete_pass, success` | EPA per play, YAC and air yards (tracking ends at the throw); joined 8,557/8,557 plays |
+</details>
 
 <details>
 <summary><b>How we know it's real: placebo tests and what we threw out</b></summary>
