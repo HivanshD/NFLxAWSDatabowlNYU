@@ -23,7 +23,14 @@ Next Gen Stats has reported a similar effect (chipped rushers take ~0.6 s longer
 Look at Kelce in the picture above: at the throw he is **0.4 yds past the line** while both receivers are 15 yds deep. That's the tax. Comparing every chipper with **himself** on non-chip routes (same down, distance, coverage, alignment and hold time):
 
 <p align="center"><img src="outputs/figs/2_the_receipt.png" width="900"></p>
+
+**See it on the field.** Every route each player ran, snap to throw. Orange = after a chip, white = his normal routes, dot = where he is at 2.0 s, when the ball typically comes out. After a chip, even the cheapest chippers are still at the line. The costliest are still *behind* it.
+<p align="center"><img src="outputs/figs/5_route_trees.png" width="850"></p>
+
+<details>
+<summary>Average route depth over time (all TEs and RBs)</summary>
 <p align="center"><img src="outputs/figs/1_two_sides_of_a_chip.png" width="900"></p>
+</details>
 
 The chipper is still "open" when he does get the ball, but only because he's shallow: targeted chippers are typically **8 yds from the nearest defender and 1 yd downfield**. That's why chip routes catch ~80%: they're checkdowns.
 <p align="center"><img src="outputs/figs/4_open_but_harmless.png" width="750"></p>
